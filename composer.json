@@ -3,10 +3,12 @@
     "type": "project",
     "license": "MIT",
     "version": "0.0.7",
+    "prefer-stable": true ,
     "authors": [
         {
             "name": "Rodrigo Manara",
-            "email": "me@rodrigomanara.co.uk"
+            "email": "me@rodrigomanara.co.uk",
+            "homepage": "http://rodrigomanara.co.uk"
         }
     ],
     "require": {
