@@ -1,0 +1,23 @@
+{
+    "name": "rodrigo/opencart-ide",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Rodrigo Manara",
+            "email": "me@rodrigomanara.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/finder": "^3.1",
+        "symfony/filesystem": "^3.1"
+    },
+    "autoload": {
+        "psr-4": { "IDE\\": "src/IDE/" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+
+}
