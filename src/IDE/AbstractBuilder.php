@@ -3,7 +3,9 @@
 namespace IDE;
 
 use Symfony\Component\Finder\Finder;
-
+/**
+ * @author Rodrigo Manara <me@rodrigomanara.co.uk>
+ */
 abstract class AbstractBuilder {
 
     protected $path = array();
@@ -51,8 +53,6 @@ abstract class AbstractBuilder {
         $result = array();
 
         if (isset($classname['model'])) {
-            //$parts = preg_split('/(?=[A-Z]{1})/', $classname['model'], -1, PREG_SPLIT_NO_EMPTY);
-
             $parts = explode("model", $path);
 
             if (isset($parts[1])) {

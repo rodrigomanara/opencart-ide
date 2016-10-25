@@ -2,8 +2,10 @@
 
 namespace IDE;
 
-
-Class Engine extends AbstractBuilder implements InterfaceBuilder {
+/**
+ * @author Rodrigo Manara <me@rodrigomanara.co.uk>
+ */
+Class System extends AbstractBuilder implements InterfaceBuilder {
 
     public function init() {
         // no recursive search

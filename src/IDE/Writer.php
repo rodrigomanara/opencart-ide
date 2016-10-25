@@ -3,9 +3,15 @@
 namespace IDE;
 
 use Symfony\Component\Filesystem\Filesystem;
-
+/**
+ * @author Rodrigo Manara <me@rodrigomanara.co.uk>
+ */
 Class Writer {
-
+    /**
+     * 
+     * @param array $list
+     * @param type $path
+     */
     public function __construct(array $list, $path) {
 
         $content = file_get_contents($path);
@@ -20,19 +26,23 @@ Class Writer {
             var_dump($e);
         }
     }
-
+    /**
+     * Build an array of property
+     * @param array $values
+     * @return type
+     */
     private function property(array $values){
         
-        $appen = array();
+        $append = array();
         
         
-        $appen[] = sprintf( "%s \t/**%s", PHP_EOL, PHP_EOL );
+        $append[] = sprintf( "%s \t/**%s", PHP_EOL, PHP_EOL );
         foreach($values as $value){
-            array_push($appen , sprintf( "\t* @property %s %s %s", $value['method'] , $value['type'], PHP_EOL ));
+            array_push($append , sprintf( "\t* @property %s %s %s", $value['method'] , $value['type'], PHP_EOL ));
         }
-        $appen[] = sprintf( "\t**/%s", PHP_EOL );
+        $append[] = sprintf( "\t**/%s", PHP_EOL );
         
-        return implode("" , $appen); 
+        return implode("" , $append); 
     }
     
 }

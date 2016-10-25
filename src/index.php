@@ -10,7 +10,7 @@ $result_model = $model->setPath(__DIR__ . DIRECTORY_SEPARATOR . "upload\\admin\\
         ->setPath(__DIR__ . DIRECTORY_SEPARATOR . "upload\\catalog\\model")
         ->init();
 
-$engine = new IDE\Engine();
+$engine = new IDE\System();
 $result_negine =  $engine->setPath(__DIR__ . DIRECTORY_SEPARATOR . "upload\\system\\library")
        
         ->init();

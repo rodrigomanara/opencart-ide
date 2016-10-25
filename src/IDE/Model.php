@@ -1,6 +1,9 @@
 <?php
 
 namespace IDE;
+/**
+ * @author Rodrigo Manara <me@rodrigomanara.co.uk>
+ */
 
 Class Model extends AbstractBuilder implements InterfaceBuilder{
 
