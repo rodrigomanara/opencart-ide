@@ -19,18 +19,20 @@
     "autoload": {
         "psr-4": {
             "IDE\\": "src/IDE/",
-            "IDE\\": "src/RUN/"
+            "ComposerScript\\": "src/"
+
         },
         "exclude-from-classmap": [
             "/Tests/"
         ]
+
     },
     "scripts": {
         "post-install-cmd": [
-            "\\RUN::start"
+            "ComposerScript\\Installer::Init"
         ],
-        "post-update-cmd": [
-            "\\RUN::start"
+        "post-update-cmd":[
+            "ComposerScript\\Installer::Init"       
         ]
     }
 }
