@@ -22,7 +22,10 @@ class Installer {
         $result_negine = $engine->setPath( "upload\\system\\library")
                 ->init();
 
-        $merge = array_merge($result_model, $result_negine);
+        $default = array(
+            array('method'=> 'Loader' , '$load'),
+        );
+        $merge = array_merge($result_model, $result_negine , $default);
 
 
         new Writer($merge, "upload\\system\\engine\\controller.php");
