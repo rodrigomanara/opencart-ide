@@ -23,7 +23,7 @@ class Installer {
                 ->init();
 
         $default = array(
-            array('method'=> 'Loader' , 'type'=> '$load'),
+            array('method'=> 'Loader' , 'type' => '$load'),
         );
         $merge = array_merge($result_model, $result_negine , $default);
 
