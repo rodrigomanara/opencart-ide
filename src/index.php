@@ -1,9 +1,5 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
-
-
-
 $model = new IDE\Model();
 
 $result_model = $model->setPath(__DIR__ . DIRECTORY_SEPARATOR . "upload\\admin\\model")
