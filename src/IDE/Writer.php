@@ -15,13 +15,12 @@ Class Writer {
     public function __construct(array $list, $path) {
 
         $content = file_get_contents($path);
-        $content = preg_replace("/php[\s\S]+? abstract/", $this->property($list), $content);
-        $content = str_replace("<?", "<?php", $content);
-        $content = str_replace("class", "abstract class", $content);
-        
+        $count = strlen($content);
+        $new_content = preg_replace("#[('<?php')]\s(.*?)\s(['abstract'])#", 'p'.$this->property($list).'a' , $content , 1 ,$count );
+                
         try {
             $file = new Filesystem();
-            $file->dumpFile($path, $content);
+            $file->dumpFile($path, $new_content);
         } catch (\Exception $e) {
             var_dump($e);
         }
