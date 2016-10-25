@@ -6,7 +6,7 @@ Create to help you identify magic method names on Opencart
 ```
 composer require rmanara/opencart_ide @dev
 ```
-> or
+### or
 ### add it on composer like this
 ```
 {
