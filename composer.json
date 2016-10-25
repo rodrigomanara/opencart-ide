@@ -1,23 +1,33 @@
 {
     "name": "rodrigomanara/opencart-ide",
     "type": "project",
+    "version": "0.0.7",
     "authors": [
         {
             "name": "Rodrigo Manara",
             "email": "me@rodrigomanara.co.uk"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "php": ">=5.5.9",
         "symfony/finder": "^3.1",
         "symfony/filesystem": "^3.1"
     },
     "autoload": {
-        "psr-4": { "IDE\\": "src/IDE/" },
+        "psr-4": {
+            "IDE\\": "src/IDE/",
+            "IDE\\": "src/RUN/"
+        },
         "exclude-from-classmap": [
             "/Tests/"
         ]
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "\\RUN::start"
+        ],
+        "post-update-cmd": [
+            "\\RUN::start"
+        ]
     }
-
 }
