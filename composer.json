@@ -3,6 +3,7 @@
     "type": "project",
     "license": "MIT",
     "version": "1.7.1",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Rodrigo Manara",
