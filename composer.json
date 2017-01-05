@@ -2,7 +2,7 @@
     "name": "rmanara/opencart_ide",
     "type": "project",
     "license": "MIT",
-    "version": "1.7.2",
+    "version": "1.0.0",
     "minimum-stability": "dev",
     "authors": [
         {
@@ -34,5 +34,12 @@
         "post-update-cmd":[
             "ComposerScript\\Installer::Init"       
         ]
-    }
+    },
+"extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
