@@ -20,22 +20,24 @@
         "psr-4": {
             "IDE\\": "src/IDE/",
             "ComposerScript\\": "src/"
-
         },
         "exclude-from-classmap": [
             "/Tests/"
         ]
-
     },
     "scripts": {
         "post-install-cmd": [
             "ComposerScript\\Installer::Init"
         ],
-        "post-update-cmd":[
+        "post-update-cmd": [
             "ComposerScript\\Installer::Init"       
+        ],
+        "post-root-package-install": [
+            "ComposerScript\\Installer::Init"       
+
         ]
     },
-"extra": {
+    "extra": {
         "branch-alias": {
             "dev-master": "1.1.x-dev"
         }
