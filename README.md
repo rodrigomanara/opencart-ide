@@ -23,10 +23,10 @@ composer require rmanara/opencart_ide @dev
     },
     "scripts": {
         "post-install-cmd": [
-            "ComposerScript\\Installer::Init"
+            "IDE\\Installer::Init"
         ],
         "post-update-cmd": [
-            "ComposerScript\\Installer::Init"
+            "IDE\\Installer::Init"
         ]
     }
 }
