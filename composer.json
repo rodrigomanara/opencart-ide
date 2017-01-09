@@ -2,7 +2,7 @@
     "name": "rmanara/opencart_ide",
     "type": "project",
     "license": "MIT",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "minimum-stability": "dev",
     "authors": [
         {
