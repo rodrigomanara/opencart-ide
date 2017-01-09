@@ -16,21 +16,16 @@ use IDE\Writer;
  */
 class Installer {
     
-    private $dir;
-    public function __construct($dir = __DIR__) {
-        $this->dir = $dir;
-    }
-    
     public static function Init( ) {
 
         $model = new Model();
 
-        $result_model = $model->setPath($this->dir . DIRECTORY_SEPARATOR .   "upload\\admin\\model")
-                ->setPath($this->dir . DIRECTORY_SEPARATOR . "upload\\catalog\\model")
+        $result_model = $model->setPath(  "upload\\admin\\model")
+                ->setPath("upload\\catalog\\model")
                 ->init();
 
         $engine = new System();
-        $result_negine = $engine->setPath($this->dir . DIRECTORY_SEPARATOR . "upload\\system\\library")
+        $result_negine = $engine->setPath("upload\\system\\library")
                 ->init();
 
         $default = array(
@@ -39,6 +34,6 @@ class Installer {
         $merge = array_merge($result_model, $result_negine, $default);
 
 
-        new Writer($merge, $this->dir . DIRECTORY_SEPARATOR . "upload\\system\\engine\\controller.php");
+        new Writer($merge, "upload\\system\\engine\\controller.php");
     }
 }

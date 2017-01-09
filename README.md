@@ -6,28 +6,20 @@
 
 Create to help you identify magic method names on Opencart
 
-## how to run 
+## using composer require 
 ```
-composer require rmanara/opencart_ide @dev
+composer require rmanara/opencart_ide
 ```
-### or
 
-### add it on composer like this
+
+### or just add it on composer like this
 ```
 {
     "name": "opencart/opencart",
     ...
     "require": {
     ...
-    "rmanara/opencart_ide" : "@dev"
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "IDE\\Installer::Init"
-        ],
-        "post-update-cmd": [
-            "IDE\\Installer::Init"
-        ]
+    "rmanara/opencart_ide" : "^1.0"
     }
 }
 ```
@@ -42,10 +34,10 @@ composer require rmanara/opencart_ide @dev
     },
     "scripts": {
         "post-install-cmd": [
-            "ComposerScript\\Installer::Init"
+            "IDE\\Installer::Init"
         ],
         "post-update-cmd": [
-            "ComposerScript\\Installer::Init"
+            "IDE\\Installer::Init"
         ]
     }
 }
