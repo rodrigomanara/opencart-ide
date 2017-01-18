@@ -23,13 +23,8 @@ class Installer {
         $dir = __DIR__."/../../../../../";
         
         $model = new Model();
-<<<<<<< HEAD
         //->setPath($dir."upload/admin/model")
         $result_model = $model
-=======
-
-        $result_model = $model->setPath($dir."upload/admin/model")
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b
                 ->setPath($dir."upload/catalog/model")
                 ->init();
 

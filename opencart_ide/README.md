@@ -42,17 +42,3 @@ composer require rmanara/opencart_ide
     }
 }
 ```
-<<<<<<< HEAD
-=======
-### after run "composer install" you will see th
-```
-Loading composer repositories with package information
-Installing dependencies (including require-dev) from lock file
-Nothing to install or update
-Generating autoload files
-> IDE\Installer::Init
-```
-## then go to any controller and check
-
-
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b

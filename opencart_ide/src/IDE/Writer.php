@@ -16,11 +16,7 @@ Class Writer {
 
         $content = file_get_contents($path);
         $count = strlen($content);
-<<<<<<< HEAD
         $new_content = preg_replace("#[('<?php')]\s(.*?)\s[('abstract')]#", "p".$this->property($list).'a' , $content , 1,$count );
-=======
-        $new_content = preg_replace("#[('<?php')]\s(.*?)\s[('abstract')]#", $this->property($list).'a' , $content , 1 ,$count );
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b
                 
         try {
             $file = new Filesystem();
