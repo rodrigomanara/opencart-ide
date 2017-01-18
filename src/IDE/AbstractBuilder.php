@@ -3,10 +3,7 @@
 namespace IDE;
 
 use Symfony\Component\Finder\Finder;
-<<<<<<< HEAD
 
-=======
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b
 /**
  * @author Rodrigo Manara <me@rodrigomanara.co.uk>
  */
@@ -63,26 +60,19 @@ abstract class AbstractBuilder {
                 $combine = array();
                 $combine[] = "model";
                 $parts = explode("\\", $parts[1]);
-<<<<<<< HEAD
-                foreach ($parts as $part) {
-=======
-                foreach($parts as $part) {
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b
+ 
+                foreach ($parts as $part) { 
                     $combine[] = strtolower($part);
                 }
             }
 
             $result['method'] = $classname['model'];
-<<<<<<< HEAD
+ 
             $type = "$" . implode("_", str_replace(".php", "", $combine));
             $result['type'] = str_replace("__", "_", str_replace("/" , "_" , $type) );
         } 
-=======
-            $type = "$" . implode("_", str_replace(".php", "",$combine));;
-            $result['type'] = str_replace("__", "_", $type);
-        }
-
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b
+ 
+ 
         if (isset($classname['class'])) {
 
             $result['method'] = $classname['class'];
@@ -93,15 +83,12 @@ abstract class AbstractBuilder {
 
         return $result;
     }
-
-<<<<<<< HEAD
+ 
     /**
      * 
      * @param type $path
      * @return type
-     */
-=======
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b
+     */ 
     protected function getContent($path) {
         $content = file_get_contents($path);
         return $content;
