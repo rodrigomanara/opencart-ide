@@ -42,8 +42,6 @@ composer require rmanara/opencart_ide
     }
 }
 ```
-<<<<<<< HEAD
-=======
 ### after run "composer install" you will see th
 ```
 Loading composer repositories with package information
@@ -54,5 +52,3 @@ Generating autoload files
 ```
 ## then go to any controller and check
 
-
->>>>>>> 11d26e60aece5a1c7f1580036bc52072f63a841b
