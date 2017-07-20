@@ -59,7 +59,7 @@ abstract class AbstractBuilder {
             if (isset($parts[1])) {
                 $combine = array();
                 $combine[] = "model";
-                $parts = explode("\\", $parts[1]);
+                $parts = explode(DIRECTORY_SEPARATOR, $parts[1]);
  
                 foreach ($parts as $part) { 
                     $combine[] = strtolower($part);

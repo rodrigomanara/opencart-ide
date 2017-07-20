@@ -15,10 +15,15 @@ Class Writer {
     public function __construct(array $list, $path) {
 
         $content = file_get_contents($path);
-        $count = strlen($content);
+        #$count = strlen($content);
  
-        $new_content = preg_replace("#[('<?php')]\s(.*?)\s[('abstract')]#", "p".$this->property($list).'a' , $content , 1,$count );
- 
+        $phpdoc = $this->property($list);
+        $phpdoc = explode("\n", $phpdoc);
+        $phpdoc = array_unique($phpdoc);
+        $phpdoc = implode(PHP_EOL,$phpdoc);
+
+        $new_content = str_replace("<?php", "<?php".PHP_EOL.$phpdoc, $content);
+
                 
         try {
             $file = new Filesystem();
