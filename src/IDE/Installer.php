@@ -20,7 +20,13 @@ class Installer {
     public static function Init( ) {
         
         
-        $dir = __DIR__."/../../../../../";
+        preg_match('/(.*?)upload/u', __DIR__, $matches);
+
+        if(isset($matches[1])){
+            $dir = $matches[1];
+        }else{
+            $dir = __DIR__."/../../../../../../../../";
+        }
         
         $model = new Model();
  
