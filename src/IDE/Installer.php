@@ -1,14 +1,11 @@
 <?php
 
- 
-
 namespace IDE;
-
 
 use IDE\Model;
 use IDE\System;
 use IDE\Writer;
- 
+use Composer\Script\Event;
 
 /**
  * Description of Installer
@@ -16,28 +13,21 @@ use IDE\Writer;
  * @author Rodrigo Manara <me@rodrigomanara.co.uk>
  */
 class Installer {
-    
-    public static function Init( ) {
-        
-        
-        preg_match('/(.*?)upload/u', __DIR__, $matches);
 
-        if(isset($matches[1])){
-            $dir = $matches[1];
-        }else{
-            $dir = __DIR__."/../../../../../../../../";
-        }
-        
+    public static function Init(Event $event) {
+
+        $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
+        $dir = $vendorDir . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR;
+
         $model = new Model();
- 
-        //->setPath($dir."upload/admin/model")
+
         $result_model = $model
- 
-                ->setPath($dir."upload/catalog/model")
+                ->setPath($dir . "upload" . DIRECTORY_SEPARATOR . "admin" . DIRECTORY_SEPARATOR . "model")
+                ->setPath($dir . "upload" . DIRECTORY_SEPARATOR . "catalog" . DIRECTORY_SEPARATOR . "model")
                 ->init();
 
         $engine = new System();
-        $result_negine = $engine->setPath($dir."upload/system/library")
+        $result_negine = $engine->setPath($dir . "upload" . DIRECTORY_SEPARATOR . "system" . DIRECTORY_SEPARATOR . "library")
                 ->init();
 
         $default = array(
@@ -46,6 +36,7 @@ class Installer {
         $merge = array_merge($result_model, $result_negine, $default);
 
 
-        new Writer($merge, $dir."upload/system/engine/controller.php");
+        new Writer($merge, $dir . "upload/system/engine/controller.php");
     }
+
 }
