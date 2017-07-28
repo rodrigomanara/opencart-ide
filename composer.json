@@ -1,8 +1,8 @@
 {
     "name": "rmanara/opencart_ide",
     "type": "project",
-    "license": "MIT",
-    "version": "1.0.6", 
+    "license": "MIT", 
+    "version": "1.0.8",  
     "minimum-stability": "dev",
     "authors": [
         {
@@ -26,7 +26,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     },
     "minimum-stability": "stable",
