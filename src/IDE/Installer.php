@@ -38,7 +38,6 @@ class Installer {
         );
         $merge = array_merge($result_model, $result_negine, $default);
 
-        var_dump($merge);
         new Writer($merge, $dir . "upload/system/engine/controller.php");
     }
     /**
