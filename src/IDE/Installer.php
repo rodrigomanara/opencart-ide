@@ -17,8 +17,11 @@ class Installer {
     public static function Init(Event $event) {
 
         $vendorDir = $event->getComposer()->getConfig()->get('vendor-dir');
-        $dir = $vendorDir . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR;
-
+        //opencart 2.* < or below
+        $defaultDirRoot = $vendorDir . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR;
+        //fix for 3.*
+        $dir = self::getDir($defaultDirRoot);
+ 
         $model = new Model();
 
         $result_model = $model
@@ -35,8 +38,22 @@ class Installer {
         );
         $merge = array_merge($result_model, $result_negine, $default);
 
-
+        var_dump($merge);
         new Writer($merge, $dir . "upload/system/engine/controller.php");
+    }
+    /**
+     * 
+     * @param type $dir
+     * @return type
+     */
+    private static function getDir($dir) {
+        
+        preg_match("/(.*?)upload/", $dir, $matches);
+
+        if (isset($matches[1])) {
+            return $matches[1];
+        }
+        return $dir;
     }
 
 }
